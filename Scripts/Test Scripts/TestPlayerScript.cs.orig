@@ -1,0 +1,55 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestPlayerScript : MonoBehaviour {
+
+	Transform myTransform;
+	Animator animController;
+	public float velocity = 0.5f;
+	// Use this for initialization
+	void Start () {
+		myTransform = this.transform;
+		animController = GetComponent<Animator> ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKey (KeyCode.W)) {
+			myTransform.position += transform.forward * velocity;
+			animController.SetBool ("idle", false);
+			animController.SetBool ("walk", true);
+		} else if (Input.GetKey (KeyCode.S)) {
+			myTransform.position -= transform.forward * velocity;
+<<<<<<< local
+			animController.SetBool ("idle", false);
+			animController.SetBool ("walk", true);
+		} 
+		else if (Input.GetKey (KeyCode.A)) {
+=======
+		}
+
+		if(Input.GetKey(KeyCode.A)){
+>>>>>>> other
+			myTransform.position -= transform.right * velocity;
+<<<<<<< local
+		} else if (Input.GetKey (KeyCode.D)) {
+=======
+		}
+		else if(Input.GetKey(KeyCode.D)){
+>>>>>>> other
+			myTransform.position += transform.right * velocity;
+<<<<<<< local
+			animController.SetBool ("idle", false);
+			animController.SetBool ("walk", true);
+		} else {
+				animController.SetBool ("walk", false);
+				animController.SetBool ("idle", true);
+		}
+=======
+		}
+
+
+>>>>>>> other
+	}
+}
